@@ -72,7 +72,9 @@ namespace FileEditor.ViewModel
             try
             {
                 FileReader fileReader = new FileReader();
-                FileContent = fileReader.Read(FilePath);
+                FileContent fileContent = new FileContent();
+                fileContent.Content = fileReader.Read(FilePath);
+                FileContent = fileContent.Content;
             }
             catch (System.Exception ex)
             {
